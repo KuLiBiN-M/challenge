@@ -11,6 +11,25 @@ body {
 #time-input {
     width: 200px;
     padding: 10px;
+    margin-bottom: 20px;
+}
+
+.input-container {
+  position: relative;
+}
+
+#error-message {
+  position: absolute;
+  top: 80%;
+  left:0;    
+  color: red;  
+  font-size: 14px;
+  z-index: 1000;
+  display: none;
+}
+
+#error-message.show {
+  display: block;
 }
 
 ul {

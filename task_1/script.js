@@ -2,8 +2,9 @@ class TimerApp {
   constructor() {
     this.timeInput = document.getElementById("time-input");
     this.addTimerButton = document.getElementById("add-timer");
-    this.timersList = document.getElementById("timers");    
-    this.handleAddTimer = this.handleAddTimer.bind(this);    
+    this.timersList = document.getElementById("timers");
+    this.errorMessage = document.getElementById("error-message");
+    this.handleAddTimer = this.handleAddTimer.bind(this);
     this.addTimerButton.addEventListener("click", this.handleAddTimer);
   }
 
@@ -17,23 +18,15 @@ class TimerApp {
     return duration;
   }
 
-  // Показ сообщения об ошибке
+  // Показываем сообщение об ошибке
   showError(message) {
-    let errorMessage = document.getElementById("error-message");
-    if (!errorMessage) {
-      errorMessage = document.createElement("div");
-      errorMessage.id = "error-message";
-      errorMessage.style.color = "red";
-      errorMessage.style.marginTop = "10px";
-      this.timeInput.parentElement.appendChild(errorMessage);
-    }
-    errorMessage.textContent = message;
-    
+    this.errorMessage.textContent = message;
+    this.errorMessage.classList.add("show");    
     setTimeout(() => {
-      if (errorMessage) errorMessage.textContent = "";
+      this.errorMessage.classList.remove("show");
     }, 3000);
   }
-
+    
   // Метод для обработки добавления нового таймера
   handleAddTimer() {
     const duration = this.validateInput(this.timeInput.value);
