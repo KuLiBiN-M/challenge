@@ -1,0 +1,43 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filters select,
+.filters input {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.filters select:focus,
+.filters input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+.filters select {
+  min-width: 160px;
+}
+
+.filters input[type="number"] {
+  max-width: 120px;
+}
+
+.filters input[type="text"] {
+  flex-grow: 1;
+  min-width: 200px;
+}
+
+.filters option {
+  font-size: 16px;
+}

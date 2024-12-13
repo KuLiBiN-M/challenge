@@ -1,0 +1,46 @@
+.reviews {
+    position: relative;
+    color: #000;
+}
+
+.number {
+    position: absolute;
+    font-size: 15px;
+    color: grey;
+    top: 8px;
+    left: 130px;
+}
+.container {
+    border-top: 1px solid rgb(138, 138, 138);
+    margin-top: 20px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.platform {
+    font-size: 25px;
+    color: blue;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    color: gray;
+    font-weight: bold;
+}
+
+.rating {
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.text {
+    font-size: 17px;
+    color: rgb(65, 65, 65);
+    font-weight: bold;
+    padding-top: 20px;
+}
