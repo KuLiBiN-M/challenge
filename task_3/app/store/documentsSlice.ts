@@ -36,10 +36,17 @@ const documentsSlice = createSlice({
         document.status = action.payload.newStatus;
         saveDocumentsToLocalStorage(state);
       }
+    },    
+    removeDocument: (state, action: PayloadAction<string>) => {
+      const filteredDocuments = state.filter(
+        (doc) => doc.id !== action.payload
+      );
+      saveDocumentsToLocalStorage(filteredDocuments);
+      return filteredDocuments;
     },
   },
 });
 
-export const { setDocuments, addDocument, moveDocument } =
+export const { setDocuments, addDocument, moveDocument, removeDocument } =
   documentsSlice.actions;
 export default documentsSlice.reducer;

@@ -44,3 +44,26 @@
     font-weight: bold;
     padding-top: 20px;
 }
+
+.loadMore {  
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px 0;
+  background-color: #ededed;
+  color: rgb(102, 102, 102);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.loadMore:hover {
+  background-color: #dddddd;
+  transform: translateY(-2px);
+}
+
+.loadMore:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(196, 196, 196, 0.5);
+}

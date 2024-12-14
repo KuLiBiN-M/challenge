@@ -4,6 +4,7 @@ import {
   moveDocument,
   addDocument,
   setDocuments,
+  removeDocument, // добавим действие для удаления
 } from "./store/documentsSlice";
 import { useState, useEffect } from "react";
 
@@ -79,6 +80,11 @@ export default function Board() {
     e.preventDefault();
   };
 
+  // Функция для удаления документа
+  const handleRemoveDocument = (id: string) => {
+    dispatch(removeDocument(id));
+  };
+
   return (
     <div className="board">
       <div className="add-document">
@@ -134,6 +140,15 @@ export default function Board() {
                     aria-label={`Перетащите документ "${doc.title}"`}
                   >
                     {doc.title}
+                    {column.id === "completed" && (
+                      <button
+                        className="remove-button"
+                        onClick={() => handleRemoveDocument(doc.id)}
+                        aria-label={`Удалить документ "${doc.title}"`}
+                      >
+                        ❌
+                      </button>
+                    )}
                   </div>
                 ))}
             </div>

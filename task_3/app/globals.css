@@ -157,7 +157,8 @@ body {
   color: #665500;
 }
 
-.document.completed {
+.document.completed {  
+  position: relative;
   background-color: #ccffcc;
   color: #006600;
 }
@@ -177,3 +178,13 @@ body {
   border-radius: 4px;
 }
 
+.remove-button {
+  position: absolute;
+  padding: 9px 10px 10px 15px;
+  right: 0;
+  top: 0;
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+}
